@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeliceCuisin</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #f8f8f8; }
+        input, button { margin: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+        button { background-color: #28a745; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <h1>DelicieCuisin</h1>
+    
+    <!-- Search by available ingredients -->
+    <h3>Find a recipe with ingredients at home</h3>
+    <input type="text" id="ingredients" placeholder="Enter ingredients (comma-separated)">
+    <button onclick="findRecipe()">Search</button>
+    
+    <!-- Search for a specific recipe -->
+    <h3>Search for a specific recipe</h3>
+    <input type="text" id="recipeName" placeholder="Enter recipe name">
+    <button onclick="searchRecipe()">Find</button>
+    
+    <script>
+        function findRecipe() {
+            let ingredients = document.getElementById("ingredients").value.toLowerCase();
+            if (ingredients.includes("rice") && ingredients.includes("chicken")) {
+                window.location.href = "biriyani.html";
+            } else if (ingredients.includes("egg")) {
+                window.location.href = "omelette.html";
+            } else {
+                alert("No matching recipe found.");
+            }
+        }
+
+        function searchRecipe() {
+            let recipe = document.getElementById("recipeName").value.toLowerCase();
+            if (recipe === "biriyani") {
+                window.location.href = "biriyani.html";
+            } else if (recipe === "omelette") {
+                window.location.href = "omelette.html";
+            } else {
+                alert("Recipe not found.");
+            }
+        }
+    </script>
+</body>
+</html>
